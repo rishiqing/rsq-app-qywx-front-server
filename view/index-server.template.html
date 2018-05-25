@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>日事清</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <meta http-equiv="content-type" content="text/html;charset=utf8"/>
+    <meta name="format-detection" content="telephone=no" />
+    <script type="text/javascript" src="https://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="https://jic.talkingdata.com/app/h5/v1?appid=BD3AFD2211754AF6BDBE2060F5E727E3&vn=ddm&vc=1.0.0-beta"></script>
+    <!--<link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">-->
+    <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+    <!-- 引入样式 -->
+    <!--<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
+    <link rel="stylesheet" href="https://rishiqing-front.oss-cn-beijing.aliyuncs.com/dingtalk/public/element-ui.css">
+    <style type="text/css">
+      .splash-loading {
+        position:fixed;left:0;top:0;right:0;bottom:0;background:#4F77AA;color: #fff;
+        transition: all 0.3s ease-in-out;
+      }
+      .splash-wrap {
+        position: absolute;left: 10%;top:25%;right:10%;
+      }
+      .splash-wrap > * {
+        text-align: center;
+      }
+      .splash-wrap img {
+        width: 100%;
+      }
+      .splash-wrap p {
+        margin: 20px 0;
+        font-size: 18px;
+      }
+      div.ease-hide {
+        opacity: 0;
+      }
+    </style>
+    <!-- 引入组件库 -->
+    <!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+    <script>
+      var rsqConfig = {{rsqConfig}}
+    </script>
+    <script>
+      (function () {
+        var width = document.documentElement.clientWidth
+        var style = document.createElement('style')
+        style.type = 'text/css'
+        style.innerHTML = 'html{ font-size:' + width / 10 + 'px; }'
+//        alert(style.innerHTML)
+        var head = document.getElementsByTagName('head')[0]
+        head.appendChild(style)
+      })()
+    </script>
+  </head>
+  <body>
+  <div id="app"></div>
+  <div id="splashLoading" class="splash-loading">
+    <div class="splash-wrap">
+      <img src="https://rishiqing-front.oss-cn-beijing.aliyuncs.com/qywx/start.png">
+      <p>欢迎使用日事清，即刻开始享受工作</p>
+    </div>
+  </div>
+  </body>
+</html>
