@@ -16,13 +16,12 @@ const template = fs.readFileSync(templatePath, 'UTF-8')
 
 const result = template.replace(placeholder, config)
 fs.writeFileSync(indexPath, result, 'UTF-8')
-console.log('result: ' + result)
 
 app.get('/', (req, res) => {
     res.end('ok')
 })
 
-app.get('/index.html', (req, res) => {
+app.get('/qywxbackwebapp/index.html', (req, res) => {
     res.sendFile(indexPath)
 })
 
