@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 const homePath = os.homedir();
-const placeholder = /(<script>[\s\S]*?){[\s\S]*?}([\s\S]*?<\/script>)/g;
+const placeholder = /(<script>[\s\S]*?rsqConfig[\s\S]*?){[\s\S]*?}([\s\S]*?<\/script>)/g;
 const configPath = path.resolve(homePath, 'qywx', 'qywx-front-server.json');
 const indexPath = path.resolve(__dirname, 'view', 'index.html');
 const backupPath = path.resolve(__dirname, 'view', 'index.bak.html');
