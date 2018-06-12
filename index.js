@@ -5,16 +5,19 @@ const express = require('express');
 const app = express();
 
 const homePath = os.homedir();
-const placeholder = '{{rsqConfig}}';
+const placeholder = /(<script id="config-placeholder">[\s\S]*?){[\s\S]*?}([\s\S]*?<\/script>)/g;
 const configPath = path.resolve(homePath, 'qywx', 'qywx-front-server.json');
-const templatePath = path.resolve(__dirname, 'view', 'index-server.template.html');
 const indexPath = path.resolve(__dirname, 'view', 'index.html');
+const backupPath = path.resolve(__dirname, 'view', 'index.bak.html');
+
+//  备份旧文件
+fs.renameSync(indexPath, backupPath);
 
 const config = fs.readFileSync(configPath, 'UTF-8');
 
-const template = fs.readFileSync(templatePath, 'UTF-8');
+const template = fs.readFileSync(backupPath, 'UTF-8');
 
-const result = template.replace(placeholder, config);
+const result = template.replace(placeholder, '$1' + config + '$2');
 fs.writeFileSync(indexPath, result, 'UTF-8');
 
 app.get('/', (req, res) => {
