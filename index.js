@@ -7,7 +7,7 @@ const app = express();
 const homePath = os.homedir();
 const placeholder = '{{rsqConfig}}';
 const configPath = path.resolve(homePath, 'qywx', 'qywx-front-server.json');
-const templatePath = path.resolve(__dirname, 'view', 'index.template.html');
+const templatePath = path.resolve(__dirname, 'view', 'index-server.template.html');
 const indexPath = path.resolve(__dirname, 'view', 'index.html');
 
 const config = fs.readFileSync(configPath, 'UTF-8');
