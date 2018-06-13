@@ -21,7 +21,7 @@ const result = template.replace(placeholder, '$1' + config + '$2');
 fs.writeFileSync(indexPath, result, 'UTF-8');
 
 app.get('/', (req, res) => {
-    res.end('ok');
+    res.end('ok.');
 });
 
 app.get('/qywxbackwebapp/index.html', (req, res) => {
